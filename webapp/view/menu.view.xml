@@ -1,0 +1,12 @@
+<mvc:View
+		controllerName="sap.ui.todomvc.controller.menu"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc">
+	<Text text="{
+		parts: ['todos>/items'],
+		formatter: '.getCount'
+	}"/>
+	<Button text="All" press="filterAll"/>
+	<Button text="Active" press="filterActive"/>
+	<Button text="Done" press="filterDone"/>
+</mvc:View>

@@ -1,0 +1,18 @@
+{
+  "newTodo": "",
+  "items": [
+	{
+	  "id": "1514272177000",
+	  "content": "this is a todo item",
+	  "done": true,
+	  "createdAt": "12/26/2017, 3:09:37 PM"
+	},
+	{
+	  "id": "1514272223000",
+	  "content": "this is another todo item",
+	  "done": false,
+	  "createdAt": "12/26/2017, 3:10:23 PM"
+	}
+  ],
+  "mode": "all"
+}

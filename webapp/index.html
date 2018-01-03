@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OpenUI5 Todo App</title>
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta charset="UTF-8">
-
-	<script id="sap-ui-bootstrap" type="text/javascript"
-		src="resources/sap-ui-core.js"
-		data-sap-ui-theme="sap_belize"
-		data-sap-ui-libs="sap.m"
-		data-sap-ui-bindingSyntax="complex"
-		data-sap-ui-compatVersion="edge"
-		data-sap-ui-preload="async"
-		data-sap-ui-resourceroots='{"sap.ui.demo.todo": "./"}'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<title>Hello World App</title>
+	<script
+			id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-preload="async"
+			data-sap-ui-resourceroots='{
+				"sap.ui.todomvc": "./"
+			}'>
 	</script>
 	<script>
-		sap.ui.getCore().attachInit(function() {
-			sap.ui.require([
-				"sap/ui/core/Component",
-				"sap/ui/core/ComponentContainer"
-			], function(Component, ComponentContainer) {
-				sap.ui.component({
-					id: "todo",
-					name: "sap.ui.demo.todo",
-					async: true
-				}).then(function(oComponent) {
-					new ComponentContainer({
-						component: oComponent
-					}).placeAt("root");
-				});
-			});
-		});
-	</script>
+		jQuery.sap.require('sap.m.Button')
+		jQuery.sap.declare('sap.m.HoverButton')
+		sap.m.Button.extend("sap.m.HoverButton", {
+			metadata: {
+				events: {
+					"hover": {}
+				}
+			},
+			onmouseover: function (evt) {
+				this.fireHover()
 
+			},
+			renderer: {}
+		})
+		sap.ui.getCore().attachInit(function () {
+			new sap.ui.core.ComponentContainer({
+				name: "sap.ui.todomvc"
+			}).placeAt("content")
+		})
+	</script>
 </head>
-<body class="sapUiBody" id="root" role="application"></body>
+<body class="sapUiBody" id="content">
+</body>
 </html>

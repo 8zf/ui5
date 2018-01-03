@@ -1,0 +1,9 @@
+<mvc:View
+		controllerName="sap.ui.todomvc.controller.todo"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc">
+		<CheckBox selected="{todos>done}"/>
+		<Input type="Text" value="{todos>content}" submit="modifyMe"/>
+		<Text text="{todos>createdAt}"/>
+		<Button text="delete" press="deleteMe"/>
+</mvc:View>

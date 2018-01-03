@@ -1,0 +1,9 @@
+<mvc:View
+	controllerName="sap.ui.todomvc.controller.todoForm"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Input
+		type="Text"
+		value="{todos>/newTodo}"
+		submit="onEnterPress"/>
+</mvc:View>

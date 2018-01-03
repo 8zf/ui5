@@ -1,0 +1,45 @@
+<mvc:View
+		controllerName="sap.ui.todomvc.controller.todos"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc">
+	<Table items="{todos>/items}"
+		   growing="true"
+		   growingScrollToLoad="true">
+		<columns>
+			<Column>
+				<Text text="标识"/>
+			</Column>
+			<Column>
+				<Text text="完成"/>
+			</Column>
+			<Column>
+				<Text text="内容"/>
+			</Column>
+			<Column>
+				<Text text="创建于"/>
+			</Column>
+			<Column>
+				<Text text="操作"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem
+					id="thisistodo"
+					press="onPress"
+					type="Active"
+					visible="{
+					parts: ['todos>/mode', 'todos>done'],
+					formatter: '.getVisible'
+				}">
+				<cells>
+					<Text text="{todos>id}"/>
+					<CheckBox selected="{todos>done}"/>
+					<Input type="Text" value="{todos>content}" submit="modifyMe"/>
+					<Text text="{todos>createdAt}"/>
+					<Button text="delete" press="deleteMe"/>
+				</cells>
+
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>
